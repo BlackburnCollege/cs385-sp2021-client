@@ -74,3 +74,9 @@ CS385GameClient/Library/SourceAssetDB
 CS385GameClient/Library/SourceAssetDB
 CS385GameClient/Library/ArtifactDB
 CS385GameClient/Library/*
+CS385GameClient/[Tt]emp/*
+CS385GameClient/[Oo]bj/*
+CS385GameClient/[Bb]uild/*
+CS385GameClient/[Bb]uilds/*
+CS385GameClient/[Ll]ogs/*
+CS385GameClient/[Uu]ser[Ss]ettings/*
