@@ -76,3 +76,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 CS385GameClient/ProjectSettings/VFXManager.asset
+CS385GameClient/Library/ArtifactDB
