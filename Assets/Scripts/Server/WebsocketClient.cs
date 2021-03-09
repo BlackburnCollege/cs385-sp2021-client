@@ -42,7 +42,7 @@ public class WebsocketClient
         sendQueue = new BlockingCollection<ArraySegment<byte>>();
         sendThread = new Thread(RunSend);
         sendThread.Start();
-        ConnectToServer();
+        //ConnectToServer();
     }
     public async void ConnectToServer()
     {

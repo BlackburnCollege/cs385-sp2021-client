@@ -14,24 +14,38 @@ public class ClientWS : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wc = new WebsocketClient();
         players = new Dictionary<string, Text>();
-        
+    }
+
+    private void Awake()
+    {
+        StartCoroutine(startConnecion());
+    }
+
+    IEnumerator startConnecion()
+    {
+        yield return new WaitForSeconds(1);
+        Debug.Log("got here");
+        wc = new WebsocketClient();
+        wc.ConnectToServer();
+        yield return null;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // Check if server send new messages
-        var cqueue = wc.receiveQueue;
-        string msg;
-        while (cqueue.TryPeek(out msg))
+        if (wc != null || !wc.IsConnecting())
         {
-            // Parse newly received messages
-            cqueue.TryDequeue(out msg);
-            Debug.Log(msg);
-            handleMessage(msg);
+            // Check if server send new messages
+            var cqueue = wc.receiveQueue;
+            string msg;
+            while (cqueue.TryPeek(out msg))
+            {
+                // Parse newly received messages
+                cqueue.TryDequeue(out msg);
+                Debug.Log(msg);
+                handleMessage(msg);
+            }
         }
     }
 
