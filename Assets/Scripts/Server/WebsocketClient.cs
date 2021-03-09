@@ -43,6 +43,7 @@ public class WebsocketClient
         sendThread = new Thread(RunSend);
         sendThread.Start();
         //ConnectToServer();
+        Debug.Log("got here ");
     }
     public async void ConnectToServer()
     {
@@ -63,7 +64,7 @@ public class WebsocketClient
         catch (Exception e)
         {
             Debug.LogError(e.Message);
-            await this.Connect();
+            //await this.Connect();
         }
 
         while (IsConnecting())

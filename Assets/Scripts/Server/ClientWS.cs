@@ -19,16 +19,13 @@ public class ClientWS : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(startConnecion());
+        StartConnecion();
     }
 
-    IEnumerator startConnecion()
+    public async void StartConnecion()
     {
-        yield return new WaitForSeconds(1);
-        Debug.Log("got here");
         wc = new WebsocketClient();
-        wc.ConnectToServer();
-        yield return null;
+        await wc.Connect();
     }
 
     // Update is called once per frame
