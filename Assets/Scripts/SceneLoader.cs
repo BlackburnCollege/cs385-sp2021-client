@@ -10,4 +10,18 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("ran");
         SceneManager.LoadScene("Settings");
     }
+
+    public void goToPlay()
+    {
+        Debug.Log("ran");
+        SceneManager.LoadScene("Play");
+    }
+
+
+    public void goToExit()
+
+    {
+        Debug.Log("ran");
+        Application.Quit();
+    }
 }
