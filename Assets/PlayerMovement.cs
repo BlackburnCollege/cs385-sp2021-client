@@ -30,21 +30,13 @@ public class PlayerMovement : MonoBehaviour
         if (Vector3.Magnitude(new Vector3(rb.velocity.x, 0, rb.velocity.z)) < maxSpeed)
         {
             Vector3 movment = (new Vector3(myTurnedInputs.x * acceleration * Time.deltaTime, 0, myTurnedInputs.z * acceleration * Time.deltaTime));
-            Debug.Log(Vector3.Normalize(rb.velocity) + "  " + myTurnedInputs + "  " + Vector3.Distance(Vector3.Normalize(rb.velocity), myTurnedInputs));
-            if (Vector3.Distance(Vector3.Normalize(rb.velocity), myTurnedInputs) == 1f)
-            {
-                rb.velocity = rb.velocity + movment + (-1 * Vector3.Normalize(rb.velocity) * (deceleration * Time.deltaTime));
-            }else if (Vector3.Distance(Vector3.Normalize(rb.velocity), myTurnedInputs) > 1f)
-            {
-                rb.velocity = rb.velocity + movment * (deceleration * Time.deltaTime);
-            }
-            else
-            {
-                rb.velocity = rb.velocity + movment;
-            }
+
+            rb.velocity = rb.velocity + movment + ((myTurnedInputs - rb.velocity.normalized) * (deceleration * Time.deltaTime));
+
+            
         }
         //rb.AddForce(new Vector3(controller.Joystick1().x * acceleration * Time.deltaTime, 0, controller.Joystick1().y * acceleration * Time.deltaTime));
 
-        transform.LookAt( transform.position + (Vector3.Normalize(rb.velocity)));
+        transform.LookAt( transform.position + myTurnedInputs);
     }
 }

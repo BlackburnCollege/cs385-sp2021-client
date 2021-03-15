@@ -671,25 +671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5906541158955078977, guid: 7514ea22e99ff4845b2e7af83a246f25,
-        type: 3}
-      propertyPath: m_Mass
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 5906541158955078978, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
       propertyPath: m_Name
       value: PlayerTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906541158955079004, guid: 7514ea22e99ff4845b2e7af83a246f25,
-        type: 3}
-      propertyPath: acceleration
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906541158955079004, guid: 7514ea22e99ff4845b2e7af83a246f25,
-        type: 3}
-      propertyPath: deceleration
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5906541158955079005, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
