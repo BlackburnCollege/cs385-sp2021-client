@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
             Vector3 movment = (new Vector3(myTurnedInputs.x * acceleration * Time.deltaTime, 0, myTurnedInputs.z * acceleration * Time.deltaTime));
 
             rb.velocity = rb.velocity + movment + ((myTurnedInputs - rb.velocity.normalized) * (deceleration * Time.deltaTime));
-
             
         }
         //rb.AddForce(new Vector3(controller.Joystick1().x * acceleration * Time.deltaTime, 0, controller.Joystick1().y * acceleration * Time.deltaTime));
