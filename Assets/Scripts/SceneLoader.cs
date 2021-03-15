@@ -17,6 +17,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Play");
     }
 
+    public void goToMainMenu()
+    {
+        Debug.Log("ran");
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public void goToExit()
 
