@@ -502,6 +502,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4579454407841743219, guid: 43704297382817646b3e74f403004aa2, type: 3}
+--- !u!95 &1217585356 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5813045022094321891, guid: 7514ea22e99ff4845b2e7af83a246f25,
+    type: 3}
+  m_PrefabInstance: {fileID: 5906541158504075887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1260240294
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +682,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTest
       objectReference: {fileID: 0}
+    - target: {fileID: 5906541158955079004, guid: 7514ea22e99ff4845b2e7af83a246f25,
+        type: 3}
+      propertyPath: playerAnimation
+      value: 
+      objectReference: {fileID: 1217585356}
     - target: {fileID: 5906541158955079005, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
       propertyPath: m_RootOrder
@@ -689,7 +700,7 @@ PrefabInstance:
     - target: {fileID: 5906541158955079005, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.88
+      value: 21.38
       objectReference: {fileID: 0}
     - target: {fileID: 5906541158955079005, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
