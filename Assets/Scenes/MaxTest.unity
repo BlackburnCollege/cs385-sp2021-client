@@ -389,6 +389,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -7.92
       objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 43704297382817646b3e74f403004aa2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3808901197613610207, guid: 43704297382817646b3e74f403004aa2,
         type: 3}
       propertyPath: m_Enabled
@@ -521,6 +526,7 @@ GameObject:
   - component: {fileID: 998032131}
   - component: {fileID: 998032130}
   - component: {fileID: 998032129}
+  - component: {fileID: 998032133}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -596,12 +602,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998032128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.47, z: 5.18}
+  m_LocalPosition: {x: -0, y: 1.41, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998032133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998032128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aa5c03b1989bf409408e539d93d02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1826924430
 PrefabInstance:
   m_ObjectHideFlags: 0
