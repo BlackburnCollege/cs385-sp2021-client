@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5906541158955079003}
+  playerAnimation: {fileID: 5813045022094321891}
   maxSpeed: 10
   acceleration: 20
   deceleration: 100
@@ -202,6 +203,12 @@ PrefabInstance:
 --- !u!4 &5906265920793786113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4356730523324166, guid: f98aac9a2d9d46b43a1e3fa2fff8cecf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5906541158486587399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5813045022094321891 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95747970734608612, guid: f98aac9a2d9d46b43a1e3fa2fff8cecf,
     type: 3}
   m_PrefabInstance: {fileID: 5906541158486587399}
   m_PrefabAsset: {fileID: 0}
