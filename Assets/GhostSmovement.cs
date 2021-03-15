@@ -37,7 +37,7 @@ public class GhostSmovement : MonoBehaviour
         if (playerList == null)
         {
             Debug.Log("There are no players");
-            return; 
+            return null; 
         } 
 
         tempBest = playerList[0];
