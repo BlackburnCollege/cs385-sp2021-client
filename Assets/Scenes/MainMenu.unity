@@ -412,7 +412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 6
+  m_Text: Waiting...
 --- !u!222 &135073559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 5
+  m_Text: Waiting...
 --- !u!222 &299626512
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -863,6 +863,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438473054}
   m_CullTransparentMesh: 0
+--- !u!1 &452080079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 452080080}
+  - component: {fileID: 452080081}
+  m_Layer: 0
+  m_Name: MenuGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &452080080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452080079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1046.3684, y: 514.7041, z: -296.375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &452080081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452080079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872852e16848aa0428a62d21d719d4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displays:
+  - {fileID: 531869730}
+  - {fileID: 2141530324}
+  - {fileID: 823186695}
+  - {fileID: 1535190799}
+  - {fileID: 299626511}
+  - {fileID: 135073558}
+  - {fileID: 741303803}
+  - {fileID: 617172080}
 --- !u!1 &531869728
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +984,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 1
+  m_Text: Waiting...
 --- !u!222 &531869731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1010,7 +1062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 8
+  m_Text: Waiting...
 --- !u!222 &617172081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1166,7 +1218,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 7
+  m_Text: Waiting...
 --- !u!222 &741303804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1244,7 +1296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 3
+  m_Text: Waiting...
 --- !u!222 &823186696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1353,15 +1405,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jo: {fileID: 1399853617}
-  playersNames:
-  - {fileID: 531869730}
-  - {fileID: 2141530324}
-  - {fileID: 823186695}
-  - {fileID: 1535190799}
-  - {fileID: 299626511}
-  - {fileID: 135073558}
-  - {fileID: 741303803}
-  - {fileID: 617172080}
+  controllers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1487066275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 4
+  m_Text: Waiting...
 --- !u!222 &1535190800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1900,7 +1952,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: player 2
+  m_Text: Waiting...
 --- !u!222 &2141530325
 CanvasRenderer:
   m_ObjectHideFlags: 0

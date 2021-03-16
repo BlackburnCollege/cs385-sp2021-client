@@ -63,7 +63,6 @@ public class JsonObjects : MonoBehaviour
 
     public class User
     {
-        public string header;
         public string name;
         public string ip;
         public Controller controller;

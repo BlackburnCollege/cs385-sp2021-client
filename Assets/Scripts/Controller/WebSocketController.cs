@@ -6,12 +6,14 @@ public class WebSocketController : Controllable
 {
 	public int indexMessage;
     private string[] messages;
+    public string username;
+    public string ip;
 
-    private Vector3 joy1;
-    private bool a = false;
-    private bool x = false;
-    private bool y = false;
-    private bool b = false;
+    public Vector3 joy1;
+    public bool a = false;
+    public bool x = false;
+    public bool y = false;
+    public bool b = false;
     private void Start()
     {
         //GameObject.FindGameObjectWithTag("PlayerGM").GetComponent<PlayerManager>().AddController(this);

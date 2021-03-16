@@ -5,16 +5,29 @@ using UnityEngine.UI;
 public class ClientWS : MonoBehaviour
 {
     WebsocketClient wc;
+    private static ClientWS _clientWs;
+    public static ClientWS clientWs{ get { return _clientWs; } set { _clientWs = value; } }
     public JsonObjects jo;
     private int index = 0;
-    public Text[] playersNames= new Text[8];
     private string[] names = new string[8];
-    Dictionary<string,Text> players;
+    public Controllable[] controllers = new Controllable[8];
+    private List<int> localControllers = new List<int>();
+
+    Dictionary<string,WebSocketController> websocketPlayers;
     
     // Start is called before the first frame update
     void Start()
     {
-        players = new Dictionary<string, Text>();
+        if(clientWs != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }else
+        {
+            clientWs = this;
+        }
+        DontDestroyOnLoad(gameObject);
+        websocketPlayers = new Dictionary<string, WebSocketController>();
     }
 
     private void Awake()
@@ -44,19 +57,49 @@ public class ClientWS : MonoBehaviour
                 handleMessage(msg);
             }
         }
+        if (index < controllers.Length)
+        {
+            for (int i = 1; i < 9; i++)
+            {
+                if (InputManger.InputA(i))
+                {
+                    if (!localControllers.Contains(i))
+                    {
+                        StandardController s = gameObject.AddComponent<StandardController>();
+                        s.connectedContNum = i;
+                        controllers[index] = s;
+                        index++;
+                        localControllers.Add(i);
+                    }
+                }
+            }
+        }
+        
     }
 
     public void handleMessage(string msg)
     {
         JsonObjects.User user = jo.deserilize<JsonObjects.User>(msg);
-        if(players.ContainsKey(user.name))
+        if(websocketPlayers.ContainsKey(user.name))
         {
-            players[user.name].text = user.name + " joyx:" + user.controller.joystick.x;
-        }else if(index < playersNames.Length)
+            WebSocketController controller = websocketPlayers[user.name];
+            controller.joy1 = new Vector2(user.controller.joystick.x, user.controller.joystick.y);
+            controller.a = user.controller.a;
+            controller.b = user.controller.b;
+            controller.x = user.controller.x;
+            controller.y = user.controller.y;
+            controller.username = user.name;
+            controller.ip = user.ip;
+            
+        }else if(index < controllers.Length)
         {
-            players.Add(user.name, playersNames[index]);
-            index++;
-            players[user.name].text = user.name + " joyx:" + user.controller.joystick.x;
+            WebSocketController w = gameObject.AddComponent<WebSocketController>();
+            websocketPlayers.Add(user.name, w);
+            if (index < controllers.Length) {
+                controllers[index] = websocketPlayers[user.name];
+                index++;
+            }
+            
         }
     }
 }

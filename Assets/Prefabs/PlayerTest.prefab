@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5906541158955079007}
   - component: {fileID: 5906541158955078976}
   - component: {fileID: 5906541158955078977}
-  - component: {fileID: 5906541158955079003}
   - component: {fileID: 5906541158955079004}
   m_Layer: 0
   m_Name: PlayerTest
@@ -113,19 +112,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &5906541158955079003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906541158955078978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bdba89ed8dc4e64ebd7489bff7f312c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectedContNum: 1
 --- !u!114 &5906541158955079004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003e2a6f14774e449827ebacbcaaba12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 5906541158955079003}
+  controller: {fileID: 5906541158955079003, guid: 7514ea22e99ff4845b2e7af83a246f25,
+    type: 3}
   playerAnimation: {fileID: 5813045022094321891}
   maxSpeed: 10
   acceleration: 20
