@@ -9,7 +9,7 @@ public class Token : MonoBehaviour
 {
     public Text token;
     string findToken;
-    
+    //This finds and set the local ip address of the computer.
     private void Start()
     {
         var host = Dns.GetHostEntry(Dns.GetHostName());
