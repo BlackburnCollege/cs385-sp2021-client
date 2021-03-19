@@ -12,7 +12,7 @@ public abstract class Enemy:Characterable
         set => _name = value;
     }
 
-    private string _health;
+    private float _health;
     public float Health  // read-write instance property
     {
         get => _health;
@@ -20,7 +20,7 @@ public abstract class Enemy:Characterable
     }
 
     private float _maxspeed;
-    public float Maxspeed  // read-write instance property
+    public float MaxSpeed  // read-write instance property
     {
         get => _maxspeed;
         set => _maxspeed = value;
@@ -33,22 +33,22 @@ public abstract class Enemy:Characterable
         set => _acceleration = value;
     }
 
-    private Weaponable _weapon;
-    public Weaponable Weapon  // read-write instance property
-    {
-        get => _weapon;
-        set => _weapon = value;
-    }
+    //private Weaponable _weapon;
+    //public Weaponable Weapon  // read-write instance property
+    //{
+    //    get => _weapon;
+    //    set => _weapon = value;
+    //}
 
 
     // Start is called before the first frame update
-    void Start() 
+    public void Start() 
     { 
     
     }
 
 
-    void Update()
+    public void Update()
     {
 
     }

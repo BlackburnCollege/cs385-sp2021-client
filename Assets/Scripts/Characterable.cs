@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Characterable : MonoBehaviour
+public interface Characterable 
 {
-    string name { get; set; };
+    string Name { get; set; }
 
-    float health { get; set; };
+    float Health { get; set; }
 
-    float maxSpeed { get; set; };
+    float MaxSpeed { get; set; }
 
-    float acceleration { get; set; };
+    float Acceleration { get; set; }
 
     //Weaponable weapon { get; set; };
 

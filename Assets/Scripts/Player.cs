@@ -14,7 +14,7 @@ public class Player:Characterable
         set => _name = value;
     }
 
-    private string _health;
+    private float _health;
     public float Health  // read-write instance property
     {
         get => _health;
@@ -22,7 +22,7 @@ public class Player:Characterable
     }
 
     private float _maxspeed;
-    public float Maxspeed  // read-write instance property
+    public float MaxSpeed  // read-write instance property
     {
         get => _maxspeed;
         set => _maxspeed = value;
@@ -47,13 +47,13 @@ public class Player:Characterable
     //public controllable controller;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
 
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
     }
