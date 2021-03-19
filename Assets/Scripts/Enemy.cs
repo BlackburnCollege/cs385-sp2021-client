@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy:Characterable
+public abstract class Enemy: MonoBehaviour, Characterable
 {
 
     private string _name;

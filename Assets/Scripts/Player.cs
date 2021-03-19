@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player:Characterable
+public class Player:MonoBehaviour, Characterable
 {
 
 
