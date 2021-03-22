@@ -31,11 +31,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (curSpeed < maxSpeed)
         {
-            Vector3 movment = (new Vector3(myTurnedInputs.x * acceleration * Time.deltaTime, 0, myTurnedInputs.z * acceleration * Time.deltaTime));
-            Vector3 xzVector = rb.velocity;
-            xzVector.y = 0;
-            rb.velocity = rb.velocity + movment + ((myTurnedInputs - xzVector.normalized) * (deceleration * Time.deltaTime));
-            
+            if (myTurnedInputs != Vector3.zero)
+            {
+                Vector3 movment = (new Vector3(myTurnedInputs.x * acceleration * Time.deltaTime, 0, myTurnedInputs.z * acceleration * Time.deltaTime));
+                Vector3 xzVector = rb.velocity;
+                xzVector.y = 0;
+                rb.velocity = rb.velocity + movment + ((myTurnedInputs - xzVector.normalized) * (deceleration * Time.deltaTime));
+            }else
+            {
+                Vector3 movment = (new Vector3(myTurnedInputs.x * acceleration * Time.deltaTime, 0, myTurnedInputs.z * acceleration * Time.deltaTime));
+                Vector3 xzVector = rb.velocity;
+                xzVector.y = 0;
+                rb.velocity = new Vector3(0,rb.velocity.y,0);
+            }
         }
         //rb.AddForce(new Vector3(controller.Joystick1().x * acceleration * Time.deltaTime, 0, controller.Joystick1().y * acceleration * Time.deltaTime));
 
