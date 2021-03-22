@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMaster : MonoBehaviour
+public class Puzzles : MonoBehaviour
 {
-    bool puzzleComplete;
-
-    
     // Start is called before the first frame update
     void Start()
     {
