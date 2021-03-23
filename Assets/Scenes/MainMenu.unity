@@ -698,7 +698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Title(place holder)
+  m_Text: One Night Stay ;)
 --- !u!222 &306898060
 CanvasRenderer:
   m_ObjectHideFlags: 0

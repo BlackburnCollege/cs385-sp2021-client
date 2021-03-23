@@ -10,7 +10,7 @@ public class PressurePlatePuzzle : MonoBehaviour, Puzzles
     // Start is called before the first frame update
     void Start()
     {
-        
+        PuzzleCompleted = false;  
     }
 
     // Update is called once per frame
@@ -28,9 +28,10 @@ public class PressurePlatePuzzle : MonoBehaviour, Puzzles
             if (!players.Contains(collision.gameObject.GetComponent<Player>()))
             {
                 players.Add(collision.gameObject.GetComponent<Player>());
-                if (GameplayGM.)
+                if (GameplayGM.gamplayGM.Players.Count == players.Count)
                 {
-
+                    PuzzleCompleted = true;
+                    Debug.Log("puzzle complete");
                 }
             }
         }
