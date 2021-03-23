@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    bool puzzleComplete;
 
+    public List<LevelMaster> levels = new List<LevelMaster>();
     
     // Start is called before the first frame update
     void Start()
