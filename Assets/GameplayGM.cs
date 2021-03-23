@@ -6,6 +6,7 @@ public class GameplayGM : MonoBehaviour
 {
     public GameObject PlayerPrefab;
     public GameObject[] spawnPoints = new GameObject[8];
+    public List<Player> Players = new List<Player>();
      
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,8 @@ public class GameplayGM : MonoBehaviour
             {
                 GameObject go = Instantiate(PlayerPrefab);
                 go.transform.position = spawnPoints[i].transform.position;
-                go.GetComponent<PlayerMovement>().controller = ClientWS.clientWs.controllers[i];
+                Players.Add(go.GetComponent<Player>());
+                go.GetComponent<Player>().controller = ClientWS.clientWs.controllers[i];
             }
         }
     }
