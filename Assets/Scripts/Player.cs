@@ -95,6 +95,11 @@ public class Player:MonoBehaviour, Characterable
         transform.LookAt(transform.position + myTurnedInputs);
     }
 
+    public void getDamage(float damage)
+    {
+
+    }
+
 
     public void Attack()
     {
