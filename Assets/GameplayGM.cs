@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameplayGM : MonoBehaviour
 {
+    public GameplayGM gamplayGM;
     public GameObject PlayerPrefab;
     public GameObject[] spawnPoints = new GameObject[8];
     public List<Player> Players = new List<Player>();
@@ -11,6 +12,7 @@ public class GameplayGM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gamplayGM = this;
         for (int i = 0; i < ClientWS.clientWs.controllers.Length; i++)
         {
             if(ClientWS.clientWs.controllers[i] != null)
