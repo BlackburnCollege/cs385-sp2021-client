@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664107897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.83, y: 0.024, z: -6.65}
+  m_LocalPosition: {x: -6.75, y: 0.024, z: 5.83}
   m_LocalScale: {x: 0.22303133, y: 1.0000001, z: 0.22305943}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1121,6 +1121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380274b61991176448b2ba3c4e7805d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzlesobj:
+  - {fileID: 664107897}
   door: {fileID: 1697351153}
 --- !u!4 &1588986896
 Transform:
