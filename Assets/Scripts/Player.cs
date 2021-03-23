@@ -98,7 +98,7 @@ public class Player:MonoBehaviour, Characterable
 
     public void Attack()
     {
-
+        
     }
 
 }

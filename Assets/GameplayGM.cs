@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameplayGM : MonoBehaviour
 {
-    public GameplayGM gamplayGM;
+    public static GameplayGM gamplayGM { get; set; }
     public GameObject PlayerPrefab;
     public GameObject[] spawnPoints = new GameObject[8];
     public List<Player> Players = new List<Player>();
