@@ -4,36 +4,58 @@ using UnityEngine;
 
 public abstract class Weaponable : MonoBehaviour
 {
+    public float damage = 1;
 
-    float Damage { get; set; }
+    public float attackTimeSec = 0.5f;
 
-    float AttackSpeed { get; set; }
+    public Characterable Owner { get; set; }
 
+    public Collider[] CollidersActiveDeactive = new Collider[2];
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Player playerOwner;
+    [SerializeField]
+    private Animator animator;
+
+    public virtual void StartAttack()
     {
+        if(animator != null)
+        {
+            animator.SetBool("attack", true);
+            StartCoroutine(DisableAfterAttack());
+        }
 
+        foreach (Collider collider in CollidersActiveDeactive)
+        {
+            collider.enabled = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator DisableAfterAttack()
     {
-
+        yield return new WaitForSeconds(attackTimeSec);
+        animator.SetBool("attack", false);
+        foreach (Collider collider in CollidersActiveDeactive)
+        {
+            collider.enabled = false;
+        }
+        yield return true;
     }
 
-    
+    public virtual void DealDamage(Characterable target)
+    {
+        target.Health -= damage;
 
-    public abstract void OnCollision();
-
-
-    public abstract void OnDamage();
-
+    }
 
     public void Pickup(Characterable pickUper)
     {
-
+        Owner = pickUper;
+        if(Owner is Player)
+        {
+            playerOwner = (Player)Owner;
+            animator = playerOwner.GetComponentInChildren<Animator>();
+            transform.SetParent(playerOwner.transform);
+        }
     }
-
-
 }

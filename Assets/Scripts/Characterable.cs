@@ -12,7 +12,7 @@ public interface Characterable
 
     float Acceleration { get; set; }
 
-    //Weaponable weapon { get; set; };
+    Weaponable weapon { get; set; }
 
    
 

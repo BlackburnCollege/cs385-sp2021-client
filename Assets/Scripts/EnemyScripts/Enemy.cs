@@ -32,6 +32,7 @@ public abstract class Enemy: MonoBehaviour, Characterable
         get => _acceleration;
         set => _acceleration = value;
     }
+    public Weaponable weapon { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     //private Weaponable _weapon;
     //public Weaponable Weapon  // read-write instance property

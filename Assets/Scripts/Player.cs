@@ -13,7 +13,7 @@ public class Player:MonoBehaviour, Characterable
         get => _name;
         set => _name = value;
     }
-
+    [SerializeField]
     private float _health;
     public float Health  // read-write instance property
     {
@@ -34,6 +34,9 @@ public class Player:MonoBehaviour, Characterable
         get => _acceleration;
         set => _acceleration = value;
     }
+
+    private Weaponable _weapon;
+    public Weaponable weapon { get { return _weapon; } set{ _weapon = value; } }
 
     //private Weaponable _weapon;
     //public Weaponable Weapon  // read-write instance property
@@ -64,6 +67,13 @@ public class Player:MonoBehaviour, Characterable
     void Update()
     {
         Movement();
+        if (controller.InputX())
+        {
+            if(weapon != null)
+            {
+                weapon.StartAttack();
+            }
+        }
     }
 
     public void Movement()
