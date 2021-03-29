@@ -52,6 +52,8 @@ public class Player:MonoBehaviour, Characterable
     public float acceleration = 5; //m/s^2
     public float deceleration = 20;
 
+    public float lockOnDistance;
+
     private Camera cam;
 
     private Rigidbody rb;
@@ -101,8 +103,25 @@ public class Player:MonoBehaviour, Characterable
             }
         }
         //rb.AddForce(new Vector3(controller.Joystick1().x * acceleration * Time.deltaTime, 0, controller.Joystick1().y * acceleration * Time.deltaTime));
-
-        transform.LookAt(transform.position + myTurnedInputs);
+        GhostSmovement[] enemys = FindObjectsOfType<GhostSmovement>();
+        GhostSmovement closeEnemy = enemys[0];
+        float d = Vector3.Distance(enemys[0].transform.position, this.transform.position);
+        for (int i = 1; i < enemys.Length; i++)
+        {
+            d = Vector3.Distance(enemys[i].transform.position, this.transform.position);
+            if (d <= lockOnDistance && d < Vector3.Distance(closeEnemy.transform.position, this.transform.position))
+            {
+                closeEnemy = enemys[i];
+            }
+        }
+        if(d <= lockOnDistance)
+        {
+            transform.LookAt(closeEnemy.transform.position);
+        }
+        else
+        {
+            transform.LookAt(transform.position + myTurnedInputs);
+        }
     }
 
     public void getDamage(float damage)

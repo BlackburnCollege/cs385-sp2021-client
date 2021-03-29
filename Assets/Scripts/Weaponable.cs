@@ -31,14 +31,19 @@ public abstract class Weaponable : MonoBehaviour
         }
     }
 
-    IEnumerator DisableAfterAttack()
+    public virtual void OnAttackEnd()
     {
-        yield return new WaitForSeconds(attackTimeSec);
         animator.SetBool("attack", false);
         foreach (Collider collider in CollidersActiveDeactive)
         {
             collider.enabled = false;
         }
+    }
+
+    IEnumerator DisableAfterAttack()
+    {
+        yield return new WaitForSeconds(attackTimeSec);
+        OnAttackEnd();
         yield return true;
     }
 

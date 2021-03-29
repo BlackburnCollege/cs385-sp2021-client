@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoxingGloves : Weaponable
 {
+    public ParticleSystem particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,18 @@ public class BoxingGloves : Weaponable
     {
         
     }
+    public override void StartAttack()
+    {
+        base.StartAttack();
+        particle.enableEmission = true;
 
+    }
+
+    public override void OnAttackEnd()
+    {
+        base.OnAttackEnd();
+        particle.enableEmission = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         
