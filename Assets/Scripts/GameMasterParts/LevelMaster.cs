@@ -7,6 +7,9 @@ public class LevelMaster : MonoBehaviour
     public GameObject[] puzzlesobj = new GameObject[10];
     public Puzzles[] puzzles;
     public GameObject door;
+    public bool levelCompleted = false;
+
+    public GameObject CameraPos;
     // Start is called before the first frame update
     void Start()
     {
