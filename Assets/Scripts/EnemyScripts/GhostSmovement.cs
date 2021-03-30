@@ -37,7 +37,7 @@ public class GhostSmovement : Enemy
         player = getNearestPlayer();
 
 
-        playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        playerPos = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
         
         distanceFromPlayer = Vector3.Distance(transform.position, playerPos);
 
@@ -46,18 +46,22 @@ public class GhostSmovement : Enemy
         if (distanceFromPlayer <= lookRadius)
         {
 
-            transform.position = Vector3.MoveTowards(transform.position, playerPos, MaxSpeed * Time.deltaTime);
+            if (distanceFromPlayer < 1f)
+            {
+                
+
+            } else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, playerPos, MaxSpeed * Time.deltaTime);
+            }
 
             if (distanceFromPlayer < 2.5f)
             {
                 Attack();
                 
             }                      
-
         }
-
-        faceTarget();
-               
+        faceTarget();       
     }
 
     
