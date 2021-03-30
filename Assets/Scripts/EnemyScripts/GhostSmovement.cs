@@ -41,8 +41,7 @@ public class GhostSmovement : Enemy
         
         distanceFromPlayer = Vector3.Distance(transform.position, playerPos);
 
-        Debug.Log(distanceFromPlayer);
-
+      
         if (distanceFromPlayer <= lookRadius)
         {
 
