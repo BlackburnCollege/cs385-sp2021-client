@@ -64,6 +64,7 @@ public class Player:MonoBehaviour, Characterable
     {
         rb = GetComponent<Rigidbody>();
         cam = FindObjectOfType<Camera>();
+        
     }
     // Update is called once per frame
     void Update()
@@ -116,7 +117,7 @@ public class Player:MonoBehaviour, Characterable
         }
         if(d <= lockOnDistance)
         {
-            transform.LookAt(closeEnemy.transform.position);
+            transform.LookAt(new Vector3(closeEnemy.transform.position.x, transform.position.y,closeEnemy.transform.position.z));
         }
         else
         {
