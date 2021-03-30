@@ -42,26 +42,14 @@ public abstract class Enemy: MonoBehaviour, Characterable
     //}
 
 
-    // Start is called before the first frame update
-    public void Start() 
-    { 
-    
-    }
 
-
-    public void Update()
+    public virtual void Movement()
     {
 
     }
 
 
-    public void Movement()
-    {
-
-    }
-
-
-    public void Attack()
+    public virtual void Attack()
     {
 
     }

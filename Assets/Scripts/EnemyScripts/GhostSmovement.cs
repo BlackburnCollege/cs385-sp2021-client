@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class GhostSmovement : Enemy
 {
-    private Timer timer = new Timer();
+    public float damage = 5.0f;
     
     public float lookRadius = 10f;
     
@@ -60,14 +60,9 @@ public class GhostSmovement : Enemy
                
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "Weaponable")
-        {
-            
-        }
-            
-    }
+    
+
+
 
     private void checkHealth()
     {
@@ -82,7 +77,7 @@ public class GhostSmovement : Enemy
     {
         Vector3 direction = (playerPos - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
 
     }
 
@@ -124,12 +119,30 @@ public class GhostSmovement : Enemy
 
 
 
-    public void Attack()
+    public override void Attack()
     {
         GetComponentInChildren<Animator>().SetTrigger("Attack 0");
     }
 
-    public void Movement()
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            DealDamage(other.GetComponent<Characterable>());
+        }
+
+    }
+
+    public virtual void DealDamage(Characterable target)
+    {
+        target.Health -= damage;
+    }
+
+
+
+
+    public override void Movement()
     {
         throw new System.NotImplementedException();
     }
