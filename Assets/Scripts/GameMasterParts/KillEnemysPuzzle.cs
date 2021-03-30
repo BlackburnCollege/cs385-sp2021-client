@@ -21,7 +21,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
         for (int i = 0; i < (int)random; i++)
         {
            
-            GameObject tempEnemy = Instantiate(enemyType, new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), Random.Range(min.z, max.z)), Quaternion.Euler(0, 0, 0));
+            GameObject tempEnemy = Instantiate(enemyType, transform.position + new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), Random.Range(min.z, max.z)), Quaternion.Euler(0, 0, 0));
             
             enemyList.Add (tempEnemy);
         }
