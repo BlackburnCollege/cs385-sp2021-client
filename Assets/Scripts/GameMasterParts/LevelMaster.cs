@@ -31,5 +31,6 @@ public class LevelMaster : MonoBehaviour
             }
         }
         door.SetActive(false);
+        levelCompleted = true;
     }
 }

@@ -17,17 +17,17 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (var level in levels)
+        if (curLevel.levelCompleted)
         {
-            if(level == curLevel)
+            foreach (var level in levels)
             {
-                break;
-            }else if (!level.levelCompleted)
-            {
-                curLevel = level;
-                camera.transform.position = level.CameraPos.transform.position;
-                camera.transform.rotation = level.CameraPos.transform.rotation;
-                break;
+                if (!level.levelCompleted)
+                {
+                    curLevel = level;
+                    camera.transform.position = level.CameraPos.transform.position;
+                    camera.transform.rotation = level.CameraPos.transform.rotation;
+                    break;
+                }
             }
         }
     }

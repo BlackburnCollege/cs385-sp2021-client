@@ -39,7 +39,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
             {
                 deathCount++;
 
-            }else if (enemyList[i].GetComponent<Characterable>().Health <= 0 )
+            }else if (enemyList[i].GetComponent<Characterable>() != null)
             {
                 deathCount++;
             }

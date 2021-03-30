@@ -26,14 +26,14 @@ public class BoxingGloves : Weaponable
     public override void StartAttack()
     {
         base.StartAttack();
-        particle.enableEmission = true;
+        //particle.enableEmission = true;
 
     }
 
     public override void OnAttackEnd()
     {
         base.OnAttackEnd();
-        particle.enableEmission = false;
+        //particle.enableEmission = false;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -60,6 +60,8 @@ public class BoxingGloves : Weaponable
             Rigidbody rb = other.GetComponent<Rigidbody>();
             if(rb != null)
             {
+                Weaponable wep = other.gameObject.AddComponent<FlyingObjectDamage>();
+                wep.damage = 100;
                 rb.AddForce(transform.forward * 1000f);
             }
         }
