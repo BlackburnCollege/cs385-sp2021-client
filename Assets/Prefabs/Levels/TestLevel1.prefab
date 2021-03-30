@@ -152,6 +152,8 @@ MonoBehaviour:
   puzzlesobj:
   - {fileID: 366089335}
   door: {fileID: 1235670558881066537}
+  levelCompleted: 0
+  CameraPos: {fileID: 875346183}
 --- !u!1 &521959396
 GameObject:
   m_ObjectHideFlags: 0
