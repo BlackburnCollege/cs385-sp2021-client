@@ -136,4 +136,11 @@ public class Player:MonoBehaviour, Characterable
         
     }
 
+    private void CheckHealth()
+    {
+        if(Health <= 0)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+    }
 }
