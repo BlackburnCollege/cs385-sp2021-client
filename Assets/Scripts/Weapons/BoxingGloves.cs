@@ -37,7 +37,16 @@ public class BoxingGloves : Weaponable
     }
     private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag == "Player")
+        {
+            if(Owner != null)
+            {
+                if(Owner is Player)
+                {
+                    return;
+                }
+            }
+        }
         Characterable character = other.GetComponent<Characterable>();
         if (character != null && Owner != null)
         {

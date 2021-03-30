@@ -69,6 +69,7 @@ public class Player:MonoBehaviour, Characterable
     // Update is called once per frame
     void Update()
     {
+        CheckHealth();
         Movement();
         if (controller.InputX())
         {
@@ -104,22 +105,29 @@ public class Player:MonoBehaviour, Characterable
             }
         }
         //rb.AddForce(new Vector3(controller.Joystick1().x * acceleration * Time.deltaTime, 0, controller.Joystick1().y * acceleration * Time.deltaTime));
-        GhostSmovement[] enemys = FindObjectsOfType<GhostSmovement>();
-        GhostSmovement closeEnemy = enemys[0];
-        float d = Vector3.Distance(enemys[0].transform.position, this.transform.position);
-        for (int i = 1; i < enemys.Length; i++)
+        Enemy[] enemys = FindObjectsOfType<Enemy>();
+        if (enemys.Length > 0)
         {
-            d = Vector3.Distance(enemys[i].transform.position, this.transform.position);
-            if (d <= lockOnDistance && d < Vector3.Distance(closeEnemy.transform.position, this.transform.position))
+            Enemy closeEnemy = enemys[0];
+
+            float d = Vector3.Distance(enemys[0].transform.position, this.transform.position);
+            for (int i = 1; i < enemys.Length; i++)
             {
-                closeEnemy = enemys[i];
+                d = Vector3.Distance(enemys[i].transform.position, this.transform.position);
+                if (d <= lockOnDistance && d < Vector3.Distance(closeEnemy.transform.position, this.transform.position))
+                {
+                    closeEnemy = enemys[i];
+                }
             }
-        }
-        if(d <= lockOnDistance)
-        {
-            transform.LookAt(new Vector3(closeEnemy.transform.position.x, transform.position.y,closeEnemy.transform.position.z));
-        }
-        else
+            if (d <= lockOnDistance)
+            {
+                transform.LookAt(new Vector3(closeEnemy.transform.position.x, transform.position.y, closeEnemy.transform.position.z));
+            }
+            else
+            {
+                transform.LookAt(transform.position + myTurnedInputs);
+            }
+        }else
         {
             transform.LookAt(transform.position + myTurnedInputs);
         }
