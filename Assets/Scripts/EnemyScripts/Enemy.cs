@@ -4,28 +4,28 @@ using UnityEngine;
 
 public abstract class Enemy: MonoBehaviour, Characterable
 {
-
+    [SerializeField]
     private string _name;
     public string Name  // read-write instance property
     {
         get => _name;
         set => _name = value;
     }
-
+    [SerializeField]
     private float _health;
     public float Health  // read-write instance property
     {
         get => _health;
         set => _health = value;
     }
-
+    [SerializeField]
     private float _maxspeed;
     public float MaxSpeed  // read-write instance property
     {
         get => _maxspeed;
         set => _maxspeed = value;
     }
-
+    [SerializeField]
     private float _acceleration;
     public float Acceleration  // read-write instance property
     {
