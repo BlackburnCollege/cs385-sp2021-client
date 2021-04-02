@@ -27,6 +27,8 @@ public class BoxingGloves : Weaponable
     {
         base.StartAttack();
         //particle.enableEmission = true;
+        particle.Play();
+        particle.gameObject.SetActive(true);
 
     }
 
@@ -34,6 +36,8 @@ public class BoxingGloves : Weaponable
     {
         base.OnAttackEnd();
         //particle.enableEmission = false;
+        particle.Pause();
+        particle.gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {

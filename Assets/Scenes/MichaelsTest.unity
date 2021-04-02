@@ -943,6 +943,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1695070500405529585, guid: 7514ea22e99ff4845b2e7af83a246f25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388741778099611685, guid: 7514ea22e99ff4845b2e7af83a246f25,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388741778099611685, guid: 7514ea22e99ff4845b2e7af83a246f25,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388741778099611685, guid: 7514ea22e99ff4845b2e7af83a246f25,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5713911317721386073, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
       propertyPath: m_Enabled
