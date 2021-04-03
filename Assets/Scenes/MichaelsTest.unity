@@ -605,12 +605,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.41034466, y: 0.42938942, z: 0.41805106}
   m_Center: {x: 0.017537085, y: -0.02241238, z: 0.01822479}
---- !u!198 &1065611809 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3388741778099611685, guid: 7514ea22e99ff4845b2e7af83a246f25,
-    type: 3}
-  m_PrefabInstance: {fileID: 5906541158504075887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1102852440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1235325404441655284, guid: 43704297382817646b3e74f403004aa2,
@@ -943,11 +937,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1695070500405529585, guid: 7514ea22e99ff4845b2e7af83a246f25,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3388741778099611685, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
       propertyPath: looping
@@ -963,16 +952,6 @@ PrefabInstance:
       propertyPath: EmissionModule.enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5713911317721386073, guid: 7514ea22e99ff4845b2e7af83a246f25,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5713911317721386076, guid: 7514ea22e99ff4845b2e7af83a246f25,
-        type: 3}
-      propertyPath: particle
-      value: 
-      objectReference: {fileID: 1065611809}
     - target: {fileID: 5906541158955078978, guid: 7514ea22e99ff4845b2e7af83a246f25,
         type: 3}
       propertyPath: m_Name

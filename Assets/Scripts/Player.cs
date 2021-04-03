@@ -17,8 +17,18 @@ public class Player:MonoBehaviour, Characterable
     private float _health;
     public float Health  // read-write instance property
     {
-        get => _health;
-        set => _health = value;
+        get { return _health; }
+        set 
+        {
+            if (value <= 0)
+            {
+                _health = 0;
+            }
+            else
+            {
+                _health = value;
+            }
+        }
     }
 
     private float _maxspeed;
@@ -35,15 +45,11 @@ public class Player:MonoBehaviour, Characterable
         set => _acceleration = value;
     }
 
+    public bool IsDead {get; private set;}
+
     private Weaponable _weapon;
     public Weaponable weapon { get { return _weapon; } set{ _weapon = value; } }
 
-    //private Weaponable _weapon;
-    //public Weaponable Weapon  // read-write instance property
-    //{
-    //    get => _weapon;
-    //    set => _weapon = value;
-    //}
 
     public Controllable controller;
     public Animator playerAnimation;
@@ -64,18 +70,24 @@ public class Player:MonoBehaviour, Characterable
     {
         rb = GetComponent<Rigidbody>();
         cam = FindObjectOfType<Camera>();
+        IsDead = false;
         
     }
+
     // Update is called once per frame
     void Update()
     {
-        CheckHealth();
-        Movement();
-        if (controller.InputX())
+        if (!IsDead)
         {
-            if(weapon != null)
+            CheckHealth();
+            Movement();
+
+            if (controller.InputX())
             {
-                weapon.StartAttack();
+                if (weapon != null)
+                {
+                    weapon.StartAttack();
+                }
             }
         }
     }
@@ -146,9 +158,15 @@ public class Player:MonoBehaviour, Characterable
 
     private void CheckHealth()
     {
+        playerAnimation.SetFloat("health", Health);
         if(Health <= 0)
         {
-            GameObject.Destroy(this.gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        IsDead = true;
     }
 }
