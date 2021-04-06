@@ -431,12 +431,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43704297382817646b3e74f403004aa2, type: 3}
---- !u!1 &875346183 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 875346183, guid: d9e2856ce2f73ff42a7badcf250487da,
-    type: 3}
-  m_PrefabInstance: {fileID: 1235670559924403486}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1243431498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5906541158955078978, guid: 7514ea22e99ff4845b2e7af83a246f25,
@@ -2708,10 +2702,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 392493379, guid: d9e2856ce2f73ff42a7badcf250487da, type: 3}
-      propertyPath: CameraPos
-      value: 
-      objectReference: {fileID: 875346183}
     - target: {fileID: 1644989387, guid: d9e2856ce2f73ff42a7badcf250487da, type: 3}
       propertyPath: Players.Array.data[0]
       value: 
