@@ -53,7 +53,7 @@ public class EyeballEnemy : Enemy
 
     private void checkHealth()
     {
-        if (Health < 0)
+        if (Health <= 0)
         {
             Object.Destroy(gameObject);
         }
