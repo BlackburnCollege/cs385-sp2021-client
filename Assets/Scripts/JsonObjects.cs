@@ -84,5 +84,17 @@ public class JsonObjects : MonoBehaviour
         public float y;
     }
 
+    public class Token
+    {
+        public string token;
+    }
+    
+    public class JsonHeader
+    {
+        public string header;
+        public string type;
+        public string jsonBlock;
+    }
+
 }
 

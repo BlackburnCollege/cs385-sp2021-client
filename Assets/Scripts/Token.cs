@@ -25,10 +25,13 @@ public class Token : MonoBehaviour
     }
 
 
-
+    private void Update()
+    {
+        SetToken(ClientWS.clientWs.token);
+    }
 
     public void SetToken(string insertedToken){
-        token.text= "IP: " + insertedToken;
+        token.text= "Token: " + insertedToken;
 
-        }
+    }
 }

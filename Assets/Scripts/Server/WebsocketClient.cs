@@ -74,7 +74,9 @@ public class WebsocketClient
             Task.Delay(50).Wait();
         }
         Debug.Log("Connect status: " + ws.State);
-
+        JsonObjects.JsonHeader msg = new JsonObjects.JsonHeader();
+        msg.header = "Client";
+        Send(JsonUtility.ToJson(msg));
         if (ws.State == WebSocketState.Open)
         {
             statsValue = 3;
