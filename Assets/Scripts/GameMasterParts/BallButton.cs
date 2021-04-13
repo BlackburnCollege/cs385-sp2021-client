@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallButton : MonoBehaviour 
 {
-    BallPuzzle ballPuzzle;
+    public BallPuzzle ballPuzzle;
     public float clicksRequired;
     public int numberOfClicks = 0;
     public Color failed;
@@ -12,7 +12,7 @@ public class BallButton : MonoBehaviour
     public Color hint;
     private Color deactive;
     public Color clicked;
-    private Material mat;
+    public Material mat;
     public bool canClick = false;
 
     private void OnCollisionEnter(Collision collision)
@@ -33,7 +33,7 @@ public class BallButton : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        
+        mat.color = deactive;
     }
     // Start is called before the first frame update
     void Start()
