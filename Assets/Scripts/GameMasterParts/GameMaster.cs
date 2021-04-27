@@ -12,6 +12,7 @@ public class GameMaster : MonoBehaviour
     void Start()
     {
         curLevel = levels[0];
+        curLevel.StartLevel();
     }
 
     // Update is called once per frame
@@ -27,6 +28,8 @@ public class GameMaster : MonoBehaviour
                     //camera.transform.position = level.CameraPos.transform.position;
                     StartCoroutine(TransitionCamera(level.CameraPos.transform));
                     cameraView.transform.rotation = level.CameraPos.transform.rotation;
+
+                    level.StartLevel();
                     break;
                 }
             }
@@ -37,7 +40,7 @@ public class GameMaster : MonoBehaviour
     {
         while (cameraView.transform.position != target.position)
         {
-            cameraView.transform.position = Vector3.MoveTowards(cameraView.transform.position, target.position, 1 * Time.deltaTime);
+            cameraView.transform.position = Vector3.MoveTowards(cameraView.transform.position, target.position, 5 * Time.deltaTime);
             yield return null;
         }
     }

@@ -154,6 +154,7 @@ MonoBehaviour:
   door: {fileID: 1235670558881066537}
   levelCompleted: 0
   CameraPos: {fileID: 875346183}
+  music: {fileID: 8300000, guid: 3dbe2cc91ffcfc94899c335d824a2a4f, type: 3}
 --- !u!1 &521959396
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,63 +232,8 @@ Transform:
   m_LocalScale: {x: 0.3333333, y: 0.5475397, z: 0.4600561}
   m_Children: []
   m_Father: {fileID: 1235670558992827105}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 40, y: -40, z: 0}
---- !u!1 &1644989386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1644989388}
-  - component: {fileID: 1644989387}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1644989388
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644989386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2691913, y: 4.143294, z: -3.973219}
-  m_LocalScale: {x: 0.33333334, y: 1, z: 0.33333334}
-  m_Children: []
-  m_Father: {fileID: 1235670558992827105}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1644989387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644989386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8027cfec5b7404789d70a1e1e8c582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 0}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Players:
-  - {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: -40, z: 0}
 --- !u!1 &1235670558757336824
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +649,6 @@ Transform:
   - {fileID: 366089336}
   - {fileID: 392493378}
   - {fileID: 521959397}
-  - {fileID: 1644989388}
   - {fileID: 875346186}
   m_Father: {fileID: 0}
   m_RootOrder: 0

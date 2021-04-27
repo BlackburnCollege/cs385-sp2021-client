@@ -10,6 +10,7 @@ public class LevelMaster : MonoBehaviour
     public bool levelCompleted = false;
 
     public GameObject CameraPos;
+    public AudioClip music;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +33,17 @@ public class LevelMaster : MonoBehaviour
         }
         door.SetActive(false);
         levelCompleted = true;
+    }
+
+    public void StartLevel()
+    {
+        StartCoroutine(startLate());
+    }
+
+    private IEnumerator startLate()
+    {
+        yield return new WaitForEndOfFrame();
+        AudioManager.PlaySong(music);
+        yield return null;
     }
 }
