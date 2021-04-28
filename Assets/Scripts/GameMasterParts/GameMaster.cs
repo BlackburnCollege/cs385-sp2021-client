@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {
     public GameObject cameraView;
+    public List<GameObject> levelsPrefab = new List<GameObject>();
     public List<LevelMaster> levels = new List<LevelMaster>();
     private LevelMaster curLevel;
     

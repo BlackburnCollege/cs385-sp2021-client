@@ -43,11 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380274b61991176448b2ba3c4e7805d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entranceDoorLocation: {fileID: 1151358240514077816}
   puzzlesobj:
   - {fileID: 0}
   door: {fileID: 0}
   levelCompleted: 0
   CameraPos: {fileID: 875346183}
+  music: {fileID: 0}
 --- !u!1 &521959396
 GameObject:
   m_ObjectHideFlags: 0
