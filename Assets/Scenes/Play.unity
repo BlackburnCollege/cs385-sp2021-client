@@ -213,7 +213,7 @@ MonoBehaviour:
   cameraView: {fileID: 1657714633}
   levelsPrefab:
   - {fileID: 1235670558992827109, guid: d9e2856ce2f73ff42a7badcf250487da, type: 3}
-  - {fileID: 1235670558992827109, guid: d9e2856ce2f73ff42a7badcf250487da, type: 3}
+  - {fileID: 1235670558992827109, guid: 94bbfa2cf264d904da5675a16c4632dd, type: 3}
   - {fileID: 1235670558992827109, guid: 94bbfa2cf264d904da5675a16c4632dd, type: 3}
   levels:
   - {fileID: 1588986895}
