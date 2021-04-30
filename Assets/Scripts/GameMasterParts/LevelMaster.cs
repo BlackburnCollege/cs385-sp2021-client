@@ -6,6 +6,7 @@ public class LevelMaster : MonoBehaviour
 {
     public GameObject baseObject;
     public GameObject entranceDoorLocation;
+    public GameObject ExitDoorLocation;
     public GameObject[] puzzlesobj = new GameObject[10];
     public Puzzles[] puzzles;
     public GameObject door;
@@ -19,9 +20,9 @@ public class LevelMaster : MonoBehaviour
         //set up the base object so the game master can move the level when needed;
         if(baseObject == null)
         {
-            if(this.GetComponentInParent<GameObject>() != null)
+            if(this.transform.parent != null)
             {
-                baseObject = this.GetComponentInParent<GameObject>();
+                baseObject = this.transform.parent.gameObject;
             }
             else
             {

@@ -12,6 +12,19 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int levelsPrefabIndex = 0;
+        for (int i = 1 ; i < levels.Count; i++)
+        {
+            if(levels[i] == null)
+            {
+                Vector3 spwnPos = (levels[i - 1].transform.position + (levels[i - 1].ExitDoorLocation.transform.parent != null ? Vector3.Scale(levels[i - 1].ExitDoorLocation.transform.localPosition, levels[i - 1].ExitDoorLocation.transform.parent.localScale) : levels[i - 1].ExitDoorLocation.transform.localPosition));
+                GameObject nextLvl = Instantiate(levelsPrefab[levelsPrefabIndex], spwnPos, Quaternion.Euler(0, 0, 0));
+                levels[i] = nextLvl.GetComponentInChildren<LevelMaster>();
+                nextLvl.transform.position -=  Vector3.Scale(levels[i].entranceDoorLocation.transform.localPosition, levels[i].transform.parent.localScale);
+
+                levelsPrefabIndex++;
+            }
+        }
         curLevel = levels[0];
         curLevel.StartLevel();
     }
