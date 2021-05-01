@@ -15,7 +15,7 @@ public abstract class Weaponable : MonoBehaviour
     [SerializeField]
     private Player playerOwner;
     [SerializeField]
-    public Animator animator;
+    private Animator animator;
 
     public virtual void StartAttack()
     {
@@ -53,7 +53,7 @@ public abstract class Weaponable : MonoBehaviour
 
     }
 
-    public virtual void Pickup(Characterable pickUper)
+    public void Pickup(Characterable pickUper)
     {
         Owner = pickUper;
         if(Owner is Player)
