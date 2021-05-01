@@ -5,6 +5,9 @@ using UnityEngine;
 public class BoxingGloves : Weaponable
 {
     public ParticleSystem particle;
+    public GameObject gloveLeft;
+    public GameObject gloveRight;
+    private GameObject[] Attachments = new GameObject[2];
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,13 @@ public class BoxingGloves : Weaponable
         //particle.enableEmission = false;
         particle.Pause();
         particle.gameObject.SetActive(false);
+    }
+
+    public override void Pickup(Characterable pickUper)
+    {
+        base.Pickup(pickUper);
+        Attachments[0] = Instantiate(gloveLeft, animator.GetBoneTransform(HumanBodyBones.LeftHand));
+        Attachments[0] = Instantiate(gloveRight, animator.GetBoneTransform(HumanBodyBones.RightHand));
     }
     private void OnTriggerEnter(Collider other)
     {
