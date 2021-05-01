@@ -55,6 +55,7 @@ public abstract class Weaponable : MonoBehaviour
 
     public virtual void Pickup(Characterable pickUper)
     {
+        //test
         Owner = pickUper;
         if(Owner is Player)
         {
