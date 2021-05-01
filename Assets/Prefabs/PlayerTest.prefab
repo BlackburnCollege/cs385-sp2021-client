@@ -158,6 +158,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5906541158955079005}
     m_Modifications:
+    - target: {fileID: 1256895702618497932, guid: 71c4bb49905948641a19f7d521e4533b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021986721727709272, guid: 71c4bb49905948641a19f7d521e4533b,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021986721727709272, guid: 71c4bb49905948641a19f7d521e4533b,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 5313295697657603109, guid: 71c4bb49905948641a19f7d521e4533b,
         type: 3}
       propertyPath: m_RootOrder
@@ -217,6 +232,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BoxingGloves
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726446464752194505, guid: 71c4bb49905948641a19f7d521e4533b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726446464752194505, guid: 71c4bb49905948641a19f7d521e4533b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71c4bb49905948641a19f7d521e4533b, type: 3}
