@@ -10,7 +10,25 @@ public class EyeballEnemy : Enemy
 
     public float distanceFromPlayer;
 
+    public float bulletImpulse = 20.0f;
+
+    public Rigidbody projectile;
+
+    private bool pathMovement = true;
+
+    private Vector3 oPosition;
+
+    private Vector3 pathPosition1;
+
+    private Vector3 pathPosition2;
+
     private GameObject player;
+
+    public int shoot_cooldown;
+
+    public GameObject pathMarker1;
+
+    public GameObject pathMarker2;
 
     private GameObject[] playerList;
 
@@ -21,6 +39,9 @@ public class EyeballEnemy : Enemy
     void Start()
     {
         player = getNearestPlayer();
+        oPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        pathPosition1 = new Vector3(pathMarker1.transform.position.x, pathMarker1.transform.position.y, pathMarker1.transform.position.z);
+        pathPosition2 = new Vector3(pathMarker2.transform.position.x, pathMarker2.transform.position.y, pathMarker2.transform.position.z);
     }
 
     // Update is called once per frame
@@ -28,13 +49,13 @@ public class EyeballEnemy : Enemy
     {
         checkHealth();
 
-
         player = getNearestPlayer();
-
 
         playerPos = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
 
         distanceFromPlayer = Vector3.Distance(transform.position, playerPos);
+
+        Movement();
 
 
         if (distanceFromPlayer <= lookRadius)
@@ -104,7 +125,15 @@ public class EyeballEnemy : Enemy
 
     public override void Attack()
     {
-       
+        if(shoot_cooldown == 0)
+        {
+            Rigidbody bullet = (Rigidbody)Instantiate(projectile, transform.position + transform.forward, transform.rotation);
+            bullet.AddForce(transform.forward * bulletImpulse, ForceMode.Impulse);
+
+            Destroy(bullet.gameObject, 2);
+            shoot_cooldown = 240;
+        }
+        shoot_cooldown--;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -126,7 +155,21 @@ public class EyeballEnemy : Enemy
 
     public override void Movement()
     {
-        throw new System.NotImplementedException();
+        if (pathMovement)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, pathPosition1, MaxSpeed * Time.deltaTime);
+            if (transform.position.x == pathPosition1.x)
+            {
+                pathMovement = false;
+            }
+        } else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, pathPosition2, MaxSpeed * Time.deltaTime);
+            if (transform.position.x == pathPosition2.x)
+            {
+                pathMovement = true;
+            }
+        }
     }
 
 
