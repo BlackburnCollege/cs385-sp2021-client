@@ -74,8 +74,18 @@ public class BoxingGloves : Weaponable
             Rigidbody rb = other.GetComponent<Rigidbody>();
             if(rb != null)
             {
-                Weaponable wep = other.gameObject.AddComponent<FlyingObjectDamage>();
-                wep.damage = 100;
+                
+                
+                if(other.GetComponent<PillarProjectileScript>() == null)
+                {
+                    Weaponable wep = other.gameObject.AddComponent<FlyingObjectDamage>();
+                    wep.damage = 100;
+                } else
+                {
+                    other.GetComponent<PillarProjectileScript>().StartAttack();
+                }
+                
+                
                 rb.AddForce(transform.forward * 1000f);
             }
         }

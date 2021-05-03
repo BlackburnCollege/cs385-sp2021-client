@@ -71,7 +71,14 @@ public class GhostSmovement : Enemy
     {
         if (Health < 0)
         {
-            Object.Destroy(gameObject);
+            if(transform.parent != null)
+            {
+                GameObject.Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                GameObject.Destroy(this.gameObject);
+            }
         }
     }
 
