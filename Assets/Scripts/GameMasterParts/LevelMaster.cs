@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelMaster : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class LevelMaster : MonoBehaviour
 
     public GameObject CameraPos;
     public AudioClip music;
+
+    public UnityEvent OnComplete;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +52,10 @@ public class LevelMaster : MonoBehaviour
         }
         door.SetActive(false);
         levelCompleted = true;
+        if (OnComplete != null)
+        {
+            OnComplete.Invoke();
+        }
     }
 
     public void StartLevel()

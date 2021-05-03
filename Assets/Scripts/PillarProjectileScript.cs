@@ -34,6 +34,7 @@ public class PillarProjectileScript : Weaponable
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         transform.localScale = new Vector3(.1f, .1f, .1f);
         transform.position = oPosition;
+        StopAllCoroutines();
         StartCoroutine(scaleEffect());
 
     }
@@ -61,6 +62,7 @@ public class PillarProjectileScript : Weaponable
 
     public override void StartAttack()
     {
+        StopAllCoroutines();
         StartCoroutine(Timer());
 
     }

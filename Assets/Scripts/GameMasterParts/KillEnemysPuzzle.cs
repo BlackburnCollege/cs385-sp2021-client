@@ -11,13 +11,16 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
     public GameObject enemyType;
     public bool PuzzleCompleted { get; set; }
     private float random;
-    private List<GameObject> enemyList;  
+    public List<GameObject> enemyList;  
     // Start is called before the first frame update
     void Start()
     {
         PuzzleCompleted = false;
         random = Random.Range (minE, maxE);
-        enemyList = new List<GameObject>();
+        if (enemyList == null)
+        {
+            enemyList = new List<GameObject>();
+        }
         for (int i = 0; i < (int)random; i++)
         {
            
@@ -39,7 +42,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
             {
                 deathCount++;
 
-            }else if (enemyList[i].GetComponent<Characterable>() != null)
+            }else if (enemyList[i].GetComponentInChildren<Enemy>().Health <= 0)
             {
                 deathCount++;
             }

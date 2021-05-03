@@ -24,7 +24,8 @@ public class EyeballEnemy : Enemy
 
     private GameObject player;
 
-    public int shoot_cooldown;
+    private float _shootCoolDown;
+    public float shootCooldown;
 
     public GameObject pathMarker1;
 
@@ -38,6 +39,7 @@ public class EyeballEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        _shootCoolDown = shootCooldown;
         player = getNearestPlayer();
         oPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         pathPosition1 = new Vector3(pathMarker1.transform.position.x, pathMarker1.transform.position.y, pathMarker1.transform.position.z);
@@ -125,15 +127,15 @@ public class EyeballEnemy : Enemy
 
     public override void Attack()
     {
-        if(shoot_cooldown == 0)
+        if(shootCooldown <= 0)
         {
             Rigidbody bullet = (Rigidbody)Instantiate(projectile, transform.position + transform.forward, transform.rotation);
             bullet.AddForce(transform.forward * bulletImpulse, ForceMode.Impulse);
 
             Destroy(bullet.gameObject, 2);
-            shoot_cooldown = 240;
+            shootCooldown = _shootCoolDown;
         }
-        shoot_cooldown--;
+        shootCooldown -= Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)

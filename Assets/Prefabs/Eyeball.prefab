@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: EyeBall
   _health: 50
-  _maxspeed: 2
+  _maxspeed: 1
   _acceleration: 0
   damage: 5
   lookRadius: 5
@@ -69,7 +69,7 @@ MonoBehaviour:
   bulletImpulse: 20
   projectile: {fileID: 188265878694332679, guid: c1430d94232731e44b0df33f290ab00c,
     type: 3}
-  shoot_cooldown: 240
+  shootCooldown: 2
   pathMarker1: {fileID: 0}
   pathMarker2: {fileID: 0}
 --- !u!1 &5037041892391209208

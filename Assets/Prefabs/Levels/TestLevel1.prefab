@@ -158,6 +158,9 @@ MonoBehaviour:
   levelCompleted: 0
   CameraPos: {fileID: 875346183}
   music: {fileID: 8300000, guid: 3dbe2cc91ffcfc94899c335d824a2a4f, type: 3}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &521959396
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +210,7 @@ MonoBehaviour:
   maxE: 4
   enemyType: {fileID: 4106588503372192966, guid: f2e92c2f2aef5d543bfe62c810662806,
     type: 3}
+  enemyList: []
 --- !u!1 &875346183
 GameObject:
   m_ObjectHideFlags: 0
