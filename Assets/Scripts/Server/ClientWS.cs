@@ -81,7 +81,7 @@ public class ClientWS : MonoBehaviour
     {
         Debug.Log(msg);
         JsonObjects.JsonHeader header = jo.deserilize<JsonObjects.JsonHeader>(msg);
-        if (header.type == "User")
+        if (header.type == "user")
         {
             JsonObjects.User user = jo.deserilize<JsonObjects.User>(header.jsonBlock);
             if (websocketPlayers.ContainsKey(user.name))
