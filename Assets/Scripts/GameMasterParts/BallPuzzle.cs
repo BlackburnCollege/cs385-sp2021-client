@@ -59,4 +59,8 @@ public class BallPuzzle : MonoBehaviour , Puzzles
         }
     }
 
+    public void StartPuzzle()
+    {
+
+    }
 }

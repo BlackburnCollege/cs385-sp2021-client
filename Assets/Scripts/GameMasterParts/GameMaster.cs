@@ -54,7 +54,7 @@ public class GameMaster : MonoBehaviour
     {
         while (cameraView.transform.position != target.position)
         {
-            cameraView.transform.position = Vector3.MoveTowards(cameraView.transform.position, target.position, 5 * Time.deltaTime);
+            cameraView.transform.position = Vector3.MoveTowards(cameraView.transform.position, target.position, 3 * Time.deltaTime);
             yield return null;
         }
     }

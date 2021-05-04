@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Enemy: MonoBehaviour, Characterable
 {
@@ -34,6 +35,8 @@ public abstract class Enemy: MonoBehaviour, Characterable
     }
     public Weaponable weapon { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
+    public UnityEvent OnAttack = new UnityEvent();
+
     //private Weaponable _weapon;
     //public Weaponable Weapon  // read-write instance property
     //{
@@ -51,7 +54,7 @@ public abstract class Enemy: MonoBehaviour, Characterable
 
     public virtual void Attack()
     {
-
+        OnAttack.Invoke();
     }
 
 }

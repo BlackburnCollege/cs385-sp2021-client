@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Weaponable : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public abstract class Weaponable : MonoBehaviour
     [SerializeField]
     public Animator animator;
 
+    public UnityEvent OnAttack = new UnityEvent();
     public virtual void StartAttack()
     {
+        OnAttack.Invoke();
         if(animator != null)
         {
             animator.SetBool("attack", true);

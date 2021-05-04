@@ -49,4 +49,9 @@ public class PressurePlatePuzzle : MonoBehaviour, Puzzles
             }
         }
     }
+
+    public void StartPuzzle()
+    {
+
+    }
 }

@@ -127,8 +127,10 @@ public class EyeballEnemy : Enemy
 
     public override void Attack()
     {
+        
         if(shootCooldown <= 0)
         {
+            base.Attack();
             Rigidbody bullet = (Rigidbody)Instantiate(projectile, transform.position + transform.forward, transform.rotation);
             bullet.AddForce(transform.forward * bulletImpulse, ForceMode.Impulse);
 

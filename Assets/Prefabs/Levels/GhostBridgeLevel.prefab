@@ -103,10 +103,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835994798892712964, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 8300000, guid: 667bcca349f36c340a397a5487304b8b, type: 3}
     - target: {fileID: 4199119070643071336, guid: 1470eece15665f940822951c13bcfdcc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014666951090712802, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9919283
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014666951090712802, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014666951090712802, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26440302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014666951090712802, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.716
       objectReference: {fileID: 0}
     - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
         type: 3}
@@ -117,6 +142,36 @@ PrefabInstance:
         type: 3}
       propertyPath: minE
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: max.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: max.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: max.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: min.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: min.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
+        type: 3}
+      propertyPath: min.z
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7137561102597772702, guid: 1470eece15665f940822951c13bcfdcc,
         type: 3}
