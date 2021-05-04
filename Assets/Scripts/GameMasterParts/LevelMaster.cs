@@ -58,11 +58,17 @@ public class LevelMaster : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// starts the level a little late
+    /// </summary>
     public void StartLevel()
     {
         StartCoroutine(startLate());
     }
-
+    /// <summary>
+    /// Starts the level a little late so there isnt any errors
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator startLate()
     {
         yield return new WaitForEndOfFrame();
