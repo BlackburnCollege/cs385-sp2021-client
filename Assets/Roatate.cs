@@ -16,7 +16,8 @@ public class Roatate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        this.transform.Rotate(new Vector3(0, dist * Time.deltaTime, 0));
+        /*
         if (Vector3.Distance(transform.position, target.position) > dist)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, 1 * Time.deltaTime);
@@ -26,5 +27,6 @@ public class Roatate : MonoBehaviour
 
             this.transform.RotateAround(target.position, Vector3.up, 20f * Time.deltaTime);
         }
+        */
     }
 }

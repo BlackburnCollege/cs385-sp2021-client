@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player:MonoBehaviour, Characterable
+public class Player : MonoBehaviour, Characterable
 {
 
 
@@ -18,7 +18,7 @@ public class Player:MonoBehaviour, Characterable
     public float Health  // read-write instance property
     {
         get { return _health; }
-        set 
+        set
         {
             if (value <= 0)
             {
@@ -26,6 +26,10 @@ public class Player:MonoBehaviour, Characterable
             }
             else
             {
+                if (_health >= value)
+                {
+                    onDamge();
+                }
                 _health = value;
             }
         }
@@ -45,7 +49,7 @@ public class Player:MonoBehaviour, Characterable
         set => _acceleration = value;
     }
 
-    public bool IsDead {get; private set;}
+    public bool IsDead { get; set; }
 
     private Weaponable _weapon;
     public Weaponable weapon { get { return _weapon; } set{ _weapon = value; } }
@@ -63,7 +67,12 @@ public class Player:MonoBehaviour, Characterable
     private Camera cam;
 
     private Rigidbody rb;
-    
+
+    public AudioSource audioSource;
+    public AudioClip[] hitSounds;
+    public AudioClip[] dieSounds;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -149,6 +158,10 @@ public class Player:MonoBehaviour, Characterable
     {
 
     }
+    public void onDamge()
+    {
+        audioSource.PlayOneShot(hitSounds[(int)Random.Range(0, hitSounds.Length)]);
+    }
 
 
     public void Attack()
@@ -167,6 +180,7 @@ public class Player:MonoBehaviour, Characterable
 
     private void Die()
     {
+        audioSource.PlayOneShot(dieSounds[(int)Random.Range(0, dieSounds.Length)]);
         IsDead = true;
     }
 }

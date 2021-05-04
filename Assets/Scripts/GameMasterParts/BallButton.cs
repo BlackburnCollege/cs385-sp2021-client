@@ -13,9 +13,10 @@ public class BallButton : MonoBehaviour
     private Color deactive;
     public Color clicked;
     public Material mat;
+    public MeshRenderer meshRender;
     public bool canClick = false;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (canClick)
         {
@@ -27,21 +28,26 @@ public class BallButton : MonoBehaviour
         {
             mat.color = failed;
             numberOfClicks = 0;
+            ballPuzzle.Reset();
         }
         
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        mat.color = deactive;
+        if (canClick)
+        {
+            mat.color = deactive;
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
         clicksRequired = (int) Random.Range(2, 5);
-        mat = this.GetComponent<Material>();
+        mat = new Material(mat);
+        meshRender.material = mat;
         deactive = mat.color;
-        GiveHint();
+        
     }
 
     // Update is called once per frame
@@ -58,6 +64,7 @@ public class BallButton : MonoBehaviour
 
     IEnumerator FlashHint()
     {
+        yield return new WaitForSeconds(1);
         canClick = false;
         for (int i = 0; i < clicksRequired; i++)
         {

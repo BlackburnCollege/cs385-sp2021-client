@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallPuzzle : MonoBehaviour , Puzzles
 {
     public bool PuzzleCompleted { get; set; }
-    List<BallButton> ballButtons;
+    public List<BallButton> ballButtons;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +61,9 @@ public class BallPuzzle : MonoBehaviour , Puzzles
 
     public void StartPuzzle()
     {
-
+        foreach (BallButton i in ballButtons)
+        {
+            i.GiveHint();
+        }
     }
 }
