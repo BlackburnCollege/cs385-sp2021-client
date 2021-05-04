@@ -17,6 +17,8 @@ public class LevelMaster : MonoBehaviour
     public AudioClip music;
 
     public UnityEvent OnComplete;
+
+    private bool done = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,18 +45,22 @@ public class LevelMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Puzzles puzzle in puzzles)
+        if (!done)
         {
-            if (!puzzle.PuzzleCompleted)
+            foreach (Puzzles puzzle in puzzles)
             {
-                return;
+                if (!puzzle.PuzzleCompleted)
+                {
+                    return;
+                }
             }
-        }
-        door.SetActive(false);
-        levelCompleted = true;
-        if (OnComplete != null)
-        {
-            OnComplete.Invoke();
+            door.SetActive(false);
+            levelCompleted = true;
+            if (OnComplete != null)
+            {
+                OnComplete.Invoke();
+            }
+            done = true;
         }
     }
 

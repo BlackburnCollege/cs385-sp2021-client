@@ -1621,7 +1621,7 @@ MonoBehaviour:
   door: {fileID: 1589763379109099981}
   levelCompleted: 0
   CameraPos: {fileID: 6626384632586403345}
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: 667bcca349f36c340a397a5487304b8b, type: 3}
   OnComplete:
     m_PersistentCalls:
       m_Calls: []
