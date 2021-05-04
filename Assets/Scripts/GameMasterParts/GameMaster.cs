@@ -48,7 +48,7 @@ public class GameMaster : MonoBehaviour
                     return;
                 }
             }
-            SceneManager.LoadScene("GameWon");
+            StartCoroutine(GameWon());
         }
     }
 
@@ -60,5 +60,11 @@ public class GameMaster : MonoBehaviour
             yield return null;
         }
         curLevel.StartLevel();
+    }
+
+    IEnumerator GameWon()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("GameWon");
     }
 }

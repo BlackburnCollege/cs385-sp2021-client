@@ -17,6 +17,7 @@ public class LevelMaster : MonoBehaviour
     public AudioClip music;
 
     public UnityEvent OnComplete;
+    public UnityEvent OnStart;
 
     private bool done = false;
     // Start is called before the first frame update
@@ -78,6 +79,12 @@ public class LevelMaster : MonoBehaviour
     private IEnumerator startLate()
     {
         yield return new WaitForEndOfFrame();
+
+        if (OnStart != null)
+        {
+            OnStart.Invoke();
+        }
+
         AudioManager.PlaySong(music);
         foreach (Puzzles puz in puzzles)
         {

@@ -64,8 +64,10 @@ public class EyeballEnemy : Enemy
         {
 
             faceTarget();
-
-            Attack();
+            if (!player.GetComponent<Player>().IsDead)
+            {
+                Attack();
+            }
 
 
         }
@@ -105,7 +107,7 @@ public class EyeballEnemy : Enemy
 
         for (int i = 1; i < playerList.Length; i++)
         {
-            if (Vector3.Distance(this.transform.position, tempBest.transform.position) >= Vector3.Distance(this.transform.position, playerList[i].transform.position))
+            if (Vector3.Distance(this.transform.position, tempBest.transform.position) >= Vector3.Distance(this.transform.position, playerList[i].transform.position) && !playerList[i].GetComponent<Player>().IsDead)
             {
                 tempBest = playerList[i];
             }
