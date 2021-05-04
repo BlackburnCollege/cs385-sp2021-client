@@ -43,7 +43,7 @@ public class GameMaster : MonoBehaviour
                     StartCoroutine(TransitionCamera(level.CameraPos.transform));
                     cameraView.transform.rotation = level.CameraPos.transform.rotation;
 
-                    level.StartLevel();
+                    
                     break;
                 }
             }
@@ -57,5 +57,6 @@ public class GameMaster : MonoBehaviour
             cameraView.transform.position = Vector3.MoveTowards(cameraView.transform.position, target.position, 3 * Time.deltaTime);
             yield return null;
         }
+        curLevel.StartLevel();
     }
 }
