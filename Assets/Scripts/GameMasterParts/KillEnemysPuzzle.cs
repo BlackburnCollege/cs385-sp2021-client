@@ -29,8 +29,13 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
             enemyList.Add (tempEnemy);
         }
         
+        foreach(GameObject enem in enemyList)
+        {
+            enem.SetActive(false);
+        }
        
     }
+
         
     // Update is called once per frame
     void Update()
@@ -52,5 +57,13 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
             PuzzleCompleted = true;
         }
     
+    }
+
+    public void StartPuzzle()
+    {
+        foreach (GameObject enem in enemyList)
+        {
+            enem.SetActive(true);
+        }
     }
 }

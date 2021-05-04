@@ -67,6 +67,10 @@ public class LevelMaster : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         AudioManager.PlaySong(music);
+        foreach (Puzzles puz in puzzles)
+        {
+            puz.StartPuzzle();
+        }
         yield return null;
     }
 }

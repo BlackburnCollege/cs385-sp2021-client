@@ -5,5 +5,7 @@ using UnityEngine;
 public interface Puzzles
 {
     bool PuzzleCompleted{ get; set; }
+
+    void StartPuzzle();
    
 }
