@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// 
+/// </summary>
 public class Timer : MonoBehaviour
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
 
@@ -12,6 +19,9 @@ public class Timer : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     void Update()
     {
         if (timerIsRunning)
@@ -28,9 +38,13 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void setTimer(int a)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="a"></param>
+    public void setTimer(int time)
     {
-        timeRemaining = a;
+        timeRemaining = time;
         timerIsRunning = true;
     }
 

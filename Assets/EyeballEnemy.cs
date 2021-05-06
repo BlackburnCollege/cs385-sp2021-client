@@ -2,41 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script for the Eyeball enemy, controlling movement, attacks, and behavior of the enemy
+/// </summary>
 public class EyeballEnemy : Enemy
 {
+    // Value representing how much damage a eyeball's attack does
     public float damage = 5.0f;
 
+    // The range at which the eyeball follows a player
     public float lookRadius = 20f;
 
+    // Value representing the distance from the nearest player
     public float distanceFromPlayer;
 
+    // Value representing the time between shots the eyeball fires 
     public float bulletImpulse = 20.0f;
 
+    // The body of the projectile the eyeball shoots
     public Rigidbody projectile;
 
+    // A boolean used for moving between two points
     private bool pathMovement = true;
 
+    // Original position of the eye
     private Vector3 oPosition;
 
+    // Position of path node 1
     private Vector3 pathPosition1;
 
+    // Position of path node 2
     private Vector3 pathPosition2;
 
+    // GameObject representing the player the ghost is locked onto
     private GameObject player;
 
+    // Value representing the time between shots the eyeball fires
     private float _shootCoolDown;
+
+    // Value representing the time between shots the eyeball fires
     public float shootCooldown;
 
+    // Object that is the path node 1
     public GameObject pathMarker1;
 
+    // Object that is the path node 2
     public GameObject pathMarker2;
 
+    // The list of all player in the game
     private GameObject[] playerList;
 
+    // The position of the nearest player
     private Vector3 playerPos;
 
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Upon creation, sets the shots cooldown, finds the nearest player, marks its position, and also marks the position of its pathing nodes
+    /// </summary>
     void Start()
     {
         _shootCoolDown = shootCooldown;
@@ -47,6 +69,10 @@ public class EyeballEnemy : Enemy
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Every frame, the Eyeball checks it HP, checks for the nearest player to aom, gets their positions and distance away from them.
+    /// If the player is within the Eyeballs lookRadius the eyeball will shoot a laser at them as it moves along its determined path. 
+    /// </summary>
     void Update()
     {
         checkHealth();
@@ -75,7 +101,9 @@ public class EyeballEnemy : Enemy
     }
 
 
-
+    /// <summary>
+    /// Checks the Objects HP. If it is below 0, the enemy is destroyed.
+    /// </summary>
     private void checkHealth()
     {
         if (Health <= 0)
@@ -84,6 +112,10 @@ public class EyeballEnemy : Enemy
         }
     }
 
+    /// <summary>
+    /// Creates a list of all players, calculates the distance from the ghost to each one, then returns the closest player to aim at. 
+    /// </summary>
+    /// <returns> The nearest player. </returns>
     GameObject getNearestPlayer()
     {
         playerList = GameObject.FindGameObjectsWithTag("Player");
@@ -119,6 +151,9 @@ public class EyeballEnemy : Enemy
 
     }
 
+    /// <summary>
+    /// Gets the direction facing the player, calculates where it needs to rotate to face the player, then slowly rotates towards them. 
+    /// </summary>
     void faceTarget()
     {
         Vector3 direction = (playerPos - transform.position).normalized;
@@ -126,7 +161,9 @@ public class EyeballEnemy : Enemy
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
     }
 
-
+    /// <summary>
+    /// Shoots an projectile, waiting till the cooldown is over to shoot another object
+    /// </summary>
     public override void Attack()
     {
         
@@ -142,6 +179,10 @@ public class EyeballEnemy : Enemy
         shootCooldown -= Time.deltaTime;
     }
 
+    /// <summary>
+    /// Checks if the object the ghost's hitbox collides with is indeed a player, and only deals damage if they are one. 
+    /// </summary>
+    /// <param name="other"> The Objects Collider/hitbox that is being hit. </param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -151,6 +192,10 @@ public class EyeballEnemy : Enemy
 
     }
 
+    /// <summary>
+    /// Subtracts health from the target that is being dealt damage. 
+    /// </summary>
+    /// <param name="target"> The Player character receiving the attack damage. </param>
     public virtual void DealDamage(Characterable target)
     {
         target.Health -= damage;
@@ -158,7 +203,9 @@ public class EyeballEnemy : Enemy
 
 
 
-
+    /// <summary>
+    /// Moves the Eyeball between two nodes at a fixed rate of speed
+    /// </summary>
     public override void Movement()
     {
         if (pathMovement)
