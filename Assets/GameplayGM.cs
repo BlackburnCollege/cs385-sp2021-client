@@ -33,6 +33,7 @@ public class GameplayGM : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>Updates this instance every frame.</summary>
     void Update()
     {
         for (int i = 0, j = 0; i < Players.Count; i++)
@@ -49,7 +50,10 @@ public class GameplayGM : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Waits a couple seconds then takes you to the game over screen
+    /// </summary>
+    /// <returns></returns>
     IEnumerator GameOver()
     {
         yield return new WaitForSeconds(4);

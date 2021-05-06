@@ -20,7 +20,7 @@ public class ClientWS : MonoBehaviour
     {
         if(clientWs != null)
         {
-            Destroy(this.gameObject);
+            GameObject.Destroy(this.gameObject);
             return;
         }else
         {
@@ -32,9 +32,13 @@ public class ClientWS : MonoBehaviour
 
     private void Awake()
     {
+        StartCoroutine(lateStart());
+    }
+    IEnumerator lateStart()
+    {
+        yield return new WaitForSeconds(1);
         StartConnecion();
     }
-
     public async void StartConnecion()
     {
         wc = new WebsocketClient();
