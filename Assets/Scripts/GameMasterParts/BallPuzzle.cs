@@ -26,7 +26,7 @@ public class BallPuzzle : MonoBehaviour , Puzzles
         Checkstatus();
     }
 
-
+    // if the puzzle is done incorrectly it will reset
     public void Reset()
     {
         foreach (BallButton button in ballButtons)
@@ -35,7 +35,7 @@ public class BallPuzzle : MonoBehaviour , Puzzles
             button.GiveHint();
         }
     }
-
+    //This see if the puzzle is complete
     private bool Complete()
     {
         foreach (BallButton item in ballButtons)
@@ -47,7 +47,7 @@ public class BallPuzzle : MonoBehaviour , Puzzles
         }
         return true;
     }
-
+    //this checks how many times the ball has been clicked and if it is the color changes to indicate success
     public void Checkstatus()
     {
         foreach (BallButton item in ballButtons)
@@ -58,7 +58,7 @@ public class BallPuzzle : MonoBehaviour , Puzzles
             }
         }
     }
-
+    //This starts the puzzle and gives a hint of how many times a ball needs to be clicked
     public void StartPuzzle()
     {
         foreach (BallButton i in ballButtons)

@@ -21,6 +21,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
         {
             enemyList = new List<GameObject>();
         }
+        // this loop makes a random number of enemies
         for (int i = 0; i < (int)random; i++)
         {
            
@@ -38,6 +39,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
 
         
     // Update is called once per frame
+    //This checks the number of enemies in a room and if they are all dead the puzzle will complete
     void Update()
     {
         int deathCount = 0;
@@ -58,7 +60,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
         }
     
     }
-
+    //This sets all of the emenies to active or alive
     public void StartPuzzle()
     {
         foreach (GameObject enem in enemyList)

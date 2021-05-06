@@ -56,12 +56,12 @@ public class BallButton : MonoBehaviour
         
     }
 
-
+    //This gives the hint
     public void GiveHint()
     {
         StartCoroutine(FlashHint());
     }
-
+    //This is where the flash hint is made so if a player fails the puzzle it will show the hint
     IEnumerator FlashHint()
     {
         yield return new WaitForSeconds(1);
