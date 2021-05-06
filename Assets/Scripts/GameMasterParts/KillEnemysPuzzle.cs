@@ -11,8 +11,12 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
     public GameObject enemyType;
     public bool PuzzleCompleted { get; set; }
     private float random;
-    public List<GameObject> enemyList;  
-    // Start is called before the first frame update
+    public List<GameObject> enemyList;
+    /// <summary>
+    /// Start is called before the first frame update
+    /// This is also where the enemies are made
+    /// </summary>
+
     void Start()
     {
         PuzzleCompleted = false;
@@ -21,6 +25,7 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
         {
             enemyList = new List<GameObject>();
         }
+        // this loop makes a random number of enemies
         for (int i = 0; i < (int)random; i++)
         {
            
@@ -36,8 +41,11 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
        
     }
 
-        
-    // Update is called once per frame
+
+    /// <summary>
+    /// Update is called once per frame 
+    /// This checks the number of enemies in a room and if they are all dead the puzzle will complete
+    /// </summary>    
     void Update()
     {
         int deathCount = 0;
@@ -58,6 +66,9 @@ public class KillEnemysPuzzle : MonoBehaviour, Puzzles
         }
     
     }
+    /// <summary>
+    /// This sets all of the emenies to active or alive
+    /// </summary>
 
     public void StartPuzzle()
     {

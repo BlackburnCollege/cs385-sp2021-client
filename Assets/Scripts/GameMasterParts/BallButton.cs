@@ -15,7 +15,11 @@ public class BallButton : MonoBehaviour
     public Material mat;
     public MeshRenderer meshRender;
     public bool canClick = false;
-
+    /// <summary>
+    /// This add how many clickes you have done and gives you a cue that you have clicked
+    /// This also shows if you clicked to many times
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter(Collider collision)
     {
         if (canClick)
@@ -32,7 +36,10 @@ public class BallButton : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// This checks if you can click and gives you a visual cue that you can
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerExit(Collider collision)
     {
         if (canClick)
@@ -55,13 +62,17 @@ public class BallButton : MonoBehaviour
     {
         
     }
-
-
+    /// <summary>
+    /// This gives the hint
+    /// </summary>
     public void GiveHint()
     {
         StartCoroutine(FlashHint());
     }
 
+    /// <summary>
+    ///  This is where the flash hint is made so if a player fails the puzzle it will show the hint
+    /// </summary>
     IEnumerator FlashHint()
     {
         yield return new WaitForSeconds(1);

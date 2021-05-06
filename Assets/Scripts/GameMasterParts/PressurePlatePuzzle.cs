@@ -20,6 +20,9 @@ public class PressurePlatePuzzle : MonoBehaviour, Puzzles
     }
 
     private List<Player> players = new List<Player>();
+    /// <summary>
+    /// This checks to see how many players are on the pressure plate and if all of them are on it the puzzle completes
+    /// </summary>
 
     private void OnCollisionStay(Collision collision)
     {
@@ -38,6 +41,9 @@ public class PressurePlatePuzzle : MonoBehaviour, Puzzles
     }
 
 
+    /// <summary>
+    /// This removes the player if they leave the pad
+    /// </summary>
 
     private void OnCollisionExit(Collision collision)
     {
