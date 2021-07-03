@@ -15,8 +15,15 @@ public class SceneLoader : MonoBehaviour
     //goToPlay changes the scene from what ever scene you are on to the play scene
     public void goToPlay()
     {
-        Debug.Log("ran");
-        SceneManager.LoadScene("Play");
+        if (ClientWS.clientWs.controllers[0] != null)
+        {
+            Debug.Log("ran");
+            SceneManager.LoadScene("Play");
+        }
+        else
+        {
+            Debug.Log("Not Enough Players to Start");
+        }
     }
 
     //goToMainMenu changes the scene from what ever scene you are on to the MainMenu scene

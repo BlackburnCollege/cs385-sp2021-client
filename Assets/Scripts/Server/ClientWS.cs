@@ -48,7 +48,7 @@ public class ClientWS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wc != null || !wc.IsConnecting())
+        if (wc != null && !wc.IsConnecting())
         {
             // Check if server send new messages
             var cqueue = wc.receiveQueue;

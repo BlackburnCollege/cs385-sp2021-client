@@ -129,9 +129,9 @@ MonoBehaviour:
   _health: 100
   controller: {fileID: 0}
   playerAnimation: {fileID: 2339370013668842996}
-  maxSpeed: 10
+  maxSpeed: 8
   acceleration: 20
-  deceleration: 100
+  deceleration: 120
   lockOnDistance: 7
   audioSource: {fileID: 2765417316080265103}
   hitSounds:
